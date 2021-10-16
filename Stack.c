@@ -8,6 +8,7 @@ int size,choice,ele;
 struct stack{
     int arr[100];
     int top;
+    int rear;
 
 }st;
 
@@ -22,7 +23,7 @@ void push(int element)
     {
         st.top--;
         printf("\nEnter a Value ");
-        scanf("%s",&ele);
+        scanf("%d",&ele);
         st.arr[st.top]=ele;
     }
 }
@@ -57,7 +58,7 @@ void display()
     if((st.top)>=0)
     {
         printf("\n\nElements in the Stack");
-        for(i=st.top;i>=0;i++)
+        for(int i=st.top;i>=0;i++)
         {
             printf("\n%d",st.arr[i]);
         }
@@ -73,17 +74,18 @@ int main()
     st.top=-1;
     printf("Enter a Stack size less than 100 : ");
     scanf("%d",&size);
-    printf("\nStack Operations.....");
+    printf("\nStack Operations....");
     printf("\n\t 1.PUSH\n\t 2.POP\n\t 3.PEEK\n\t 4.DISPLAY\n\t 5.EXIT");
 
     do{
         printf("\nEnter Your Choice  ");
-        scanf("%c",&choice);
+        scanf("%d",&choice);
         switch(choice)
         {
         case 1:
             {
-                push(ele);break;
+                push(ele);
+                break;
             }
         case 2:
             {
